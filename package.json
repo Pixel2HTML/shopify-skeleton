@@ -1,9 +1,24 @@
 {
-  "name": "@pixel2html/shopify-skeleton",
+  "name": "generator-shop-skeleton",
   "version": "1.0.0",
   "description": "scaffold and develop shopify themes",
   "main": "index.js",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "babel",
+    "shopify"
+  ],
   "repository": "git@code.pixel2html.com:development-tools/shopify-skeleton.git",
   "author": "Miguel Palau <mpalauzarza@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  },
+  "devDependencies": {
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
+  }
 }
