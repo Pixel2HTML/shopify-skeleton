@@ -2,7 +2,6 @@
   "name": "generator-shop-skeleton",
   "version": "1.0.0",
   "description": "scaffold and develop shopify themes",
-  "main": "index.js",
   "files": [
     "generators"
   ],
