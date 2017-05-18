@@ -1,0 +1,9 @@
+{
+  "name": "@pixel2html/shopify-skeleton",
+  "version": "1.0.0",
+  "description": "scaffold and develop shopify themes",
+  "main": "index.js",
+  "repository": "git@code.pixel2html.com:development-tools/shopify-skeleton.git",
+  "author": "Miguel Palau <mpalauzarza@gmail.com>",
+  "license": "MIT"
+}
