@@ -2,10 +2,7 @@
   "name": "generator-shop-skeleton",
   "version": "1.0.0",
   "description": "scaffold and develop shopify themes quickly",
-  "author": {
-    "name": "Miguel Palau",
-    "email": "miguel@pixel2html.com"
-  },
+  "author": "Miguel Palau <mpalauzarza@gmail.com>",
   "scripts": {
     "copy": "node lib/copy",
     "clean": "node lib/clean",
@@ -22,7 +19,6 @@
     "shopify"
   ],
   "repository": "git@code.pixel2html.com:development-tools/shopify-skeleton.git",
-  "author": "Miguel Palau <mpalauzarza@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.0.1",
