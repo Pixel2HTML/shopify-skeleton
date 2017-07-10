@@ -7,7 +7,8 @@
     "copy": "node lib/copy",
     "clean": "node lib/clean",
     "compile": " babel -d generators/ --ignore templates/ generators/",
-    "prepublish": "npm run clean; npm run copy; npm run compile",
+    "get-ready": "npm run clean; npm run copy; npm run compile",
+    "prepublish": "npm run get-ready",
     "test": "mocha --require babel-register"
   },
   "files": [
@@ -21,6 +22,7 @@
   "repository": "git@code.pixel2html.com:development-tools/shopify-skeleton.git",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
     "chalk": "^2.0.1",
     "cowsay-browser": "^1.1.8",
     "yeoman-generator": "^1.1.1"
