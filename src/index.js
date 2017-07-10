@@ -1,15 +1,8 @@
-import Generator from 'yeoman-generator'
-
-// Very serious dependencies
+import Yeoman from 'yeoman-generator'
 import cowsay from 'cowsay-browser'
 import chalk from 'chalk'
 
-class ShopifySkeleton extends Generator {
-  constructor (...args) {
-    super(...args)
-    this.config = {}
-  }
-
+class ShopifySkeleton extends Yeoman {
   sayHello () {
     const greeting = cowsay.say({
       text: 'Pixel2HTML Shopify Skeleton',
