@@ -8,7 +8,10 @@
   },
   "scripts": {
     "copy": "node lib/copy",
-    "clean": "node lib/clean"
+    "clean": "node lib/clean",
+    "compile": " babel -d generators/ --ignore templates/ generators/",
+    "prepublish": "npm run clean; npm run copy; npm run compile",
+    "test": "mocha --require babel-register"
   },
   "files": [
     "generators/app"

@@ -1,8 +1,8 @@
-const Generator = require('yeoman-generator')
+import Generator from 'yeoman-generator'
 
 // Very serious dependencies
-const cowsay = require('cowsay-browser')
-const chalk = require('chalk')
+import cowsay from 'cowsay-browser'
+import chalk from 'chalk'
 
 class ShopifySkeleton extends Generator {
   sayHello () {
@@ -14,4 +14,4 @@ class ShopifySkeleton extends Generator {
   }
 }
 
-module.exports = ShopifySkeleton
+export default ShopifySkeleton
