@@ -23,6 +23,7 @@
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.24.1",
+    "fs-extra": "^3.0.1",
     "mocha": "^3.4.2",
     "standard": "^10.0.2",
     "yeoman-assert": "^3.0.0",
