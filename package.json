@@ -1,11 +1,17 @@
 {
   "name": "generator-shop-skeleton",
   "version": "1.0.0",
-  "description": "scaffold and develop shopify themes",
+  "description": "scaffold and develop shopify themes quickly",
+  "author": {
+    "name": "Miguel Palau",
+    "email": "miguel@pixel2html.com"
+  },
+  "scripts": {
+    "copy": "node lib/copy"
+  },
   "files": [
-    "app"
+    "generators/app"
   ],
-  "main": "app/index.js",
   "keywords": [
     "yeoman-generator",
     "babel",
@@ -28,5 +34,17 @@
     "standard": "^10.0.2",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.7.0"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "xdescribe",
+      "xit"
+    ]
   }
 }
