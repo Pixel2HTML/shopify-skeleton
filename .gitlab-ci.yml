@@ -1,0 +1,7 @@
+before_script:
+  - yarn install
+
+job:
+  script:
+    - npm run get-ready
+    - npm test
