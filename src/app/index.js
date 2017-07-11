@@ -1,7 +1,7 @@
 import Yeoman from 'yeoman-generator'
 import cowsay from 'cowsay-browser'
 import chalk from 'chalk'
-import { shopifyCoreFiles } from '../../lib/filesToAssert'
+import filesToAssert from '../../lib/filesToAssert'
 
 class ShopifySkeleton extends Yeoman {
   sayHello () {
@@ -12,8 +12,7 @@ class ShopifySkeleton extends Yeoman {
     this.log(chalk.blue(greeting))
   }
   copyShopifyCoreFiles () {
-    this.log(chalk.hex('#3E456C')('Copying Shopify Core Files Now...'))
-    return shopifyCoreFiles.map(file => {
+    return filesToAssert.shopifyCoreFiles.map(file => {
       this.fs.copyTpl(
         this.templatePath(file),
         this.destinationPath(file),

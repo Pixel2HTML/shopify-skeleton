@@ -1,7 +1,7 @@
 import helpers from 'yeoman-test'
 import assert from 'yeoman-assert'
 import path from 'path'
-import { shopifyCoreFiles } from '../lib/filesToAssert'
+import filesToAssert from '../lib/filesToAssert'
 
 describe('General Assertions', function () {
   beforeEach(function () {
@@ -10,6 +10,6 @@ describe('General Assertions', function () {
   })
 
   it('creates expected base files', function () {
-    assert.file(shopifyCoreFiles)
+    assert.file(filesToAssert.shopifyCoreFiles)
   })
 })
