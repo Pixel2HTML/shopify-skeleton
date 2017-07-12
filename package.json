@@ -22,13 +22,13 @@
   "repository": "git@code.pixel2html.com:development-tools/shopify-skeleton.git",
   "license": "MIT",
   "dependencies": {
-    "babel-plugin-add-module-exports": "^0.2.1",
     "chalk": "^2.0.1",
     "cowsay-browser": "^1.1.8",
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.24.1",
     "fs-extra": "^3.0.1",
