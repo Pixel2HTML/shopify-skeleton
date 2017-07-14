@@ -3,5 +3,4 @@ before_script:
 
 job:
   script:
-    - npm run get-ready
-    - npm test
+    - yarn test

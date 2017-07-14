@@ -1,3 +1,4 @@
 src/
-lib/
+test/
 .babelrc
+.gitlab-ci.yml
