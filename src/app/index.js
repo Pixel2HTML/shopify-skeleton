@@ -14,8 +14,8 @@ class ShopifySkeleton extends Yeoman {
   copyShopifyCoreFiles () {
     return filesToAssert.shopifyCoreFiles.map(file => {
       this.fs.copyTpl(
-        this.templatePath(file),
-        this.destinationPath(file),
+        this.templatePath(`theme/${file}`),
+        this.destinationPath(`src/theme/${file}`),
         {
           author: 'Pixel2HTML'
         }
