@@ -32,7 +32,6 @@
     "babel-jest": "^20.0.3",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.24.1",
     "fs-extra": "^4.0.0",
     "jest": "^20.0.4",
     "standard": "^10.0.2",
