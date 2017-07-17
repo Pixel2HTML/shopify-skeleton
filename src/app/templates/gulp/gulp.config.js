@@ -15,7 +15,10 @@ module.exports = {
     scssVendors: [
       './src/styles/vendor.scss'
     ],
-    jsMain: './src/scripts/app.js'
+    jsMain: './src/scripts/app.js',
+    fonts: [
+      './src/fonts/**/*'
+    ]
   },
   dist: {
     assets: './deploy/assets'
