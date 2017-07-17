@@ -6,6 +6,8 @@ const $ = require('gulp-load-plugins')()
 const production = config.production
 const moduleImporter = require('sass-module-importer')
 
+const destination = config.theme + '/assets'
+
 gulp.task('main:styles', function () {
   return gulp.src(config.src.scssMain)
     .pipe(when(!production, $.sourcemaps.init()))
@@ -18,7 +20,7 @@ gulp.task('main:styles', function () {
     .pipe(gulp.dest(config.directories.dist.styles))
     .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.cssnano()))
-    .pipe(when(production, gulp.dest(config.dist.assets)))
+    .pipe(when(production, gulp.dest(destination)))
 })
 
 gulp.task('font:styles', function () {
@@ -33,7 +35,7 @@ gulp.task('font:styles', function () {
     .pipe(gulp.dest(config.directories.dist.styles))
     .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.cssnano()))
-    .pipe(when(production, gulp.dest(config.dist.assets)))
+    .pipe(when(production, gulp.dest(destination)))
 })
 
 gulp.task('vendor:styles', function () {
@@ -48,7 +50,7 @@ gulp.task('vendor:styles', function () {
     .pipe(gulp.dest(config.directories.dist.styles))
     .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.cssnano()))
-    .pipe(when(production, gulp.dest(config.dist.assets)))
+    .pipe(when(production, gulp.dest(destination)))
 })
 
 gulp.task('styles', gulp.parallel('main:styles', 'font:styles', 'vendor:styles'))

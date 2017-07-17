@@ -5,6 +5,7 @@ const argv = require('yargs').argv
 const production = argv.prod || argv.production
 
 module.exports = {
+  theme: './deploy',
   src: {
     scssMain: [
       './src/styles/main.scss'
@@ -19,9 +20,6 @@ module.exports = {
     fonts: [
       './src/fonts/**/*'
     ]
-  },
-  dist: {
-    assets: './deploy/assets'
   },
   scriptVendors: [
     'jquery'

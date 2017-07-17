@@ -10,7 +10,7 @@ const config = require('../gulp.config')
 const transform = [ babel ]
 const vendors = config.scriptVendors
 const production = config.production
-const destination = config.assets
+const destination = config.theme + '/assets'
 
 gulp.task('vendor:scripts', () => {
   const b = browserify({
