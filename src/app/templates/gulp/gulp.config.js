@@ -19,7 +19,8 @@ module.exports = {
     jsMain: './src/scripts/app.js',
     fonts: [
       './src/fonts/**/*'
-    ]
+    ],
+    icons: './src/icons'
   },
   scriptVendors: [
     'jquery'
