@@ -20,7 +20,12 @@ module.exports = {
     fonts: [
       './src/fonts/**/*'
     ],
-    icons: './src/icons'
+    icons: [
+      './src/icons/**/*'
+    ],
+    images: [
+      './src/images/**/*'
+    ]
   },
   scriptVendors: [
     'jquery'
