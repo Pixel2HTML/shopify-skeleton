@@ -1,6 +1,6 @@
-var gulp = require('gulp')
-var config = require('../config')
-var browserSync = require('browser-sync')
+const gulp = require('gulp')
+const config = require('../config')
+const browserSync = require('browser-sync')
 
 function reload (done) {
   browserSync.reload()
@@ -21,6 +21,8 @@ gulp.task('watch', done => {
   gulp.watch(config.src.icons, gulp.series('icons', reload))
   gulp.watch(config.src.styles + '/**/*', gulp.series('styles', reload))
   gulp.watch(config.src.scripts + '/**/*', gulp.series('scripts', reload))
+  gulp.watch(config.src.images, gulp.series('images', reload))
+  gulp.watch(config.src.shopify, gulp.series('shopify', reload))
   done()
 })
 

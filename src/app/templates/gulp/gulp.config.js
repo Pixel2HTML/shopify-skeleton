@@ -25,6 +25,9 @@ module.exports = {
     ],
     images: [
       './src/images/**/*'
+    ],
+    shopify: [
+      './src/theme/**/*'
     ]
   },
   scriptVendors: [
