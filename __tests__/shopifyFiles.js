@@ -9,7 +9,7 @@ describe('General Assertions', function () {
       .toPromise()
   })
 
-  it('creates expected base files', function () {
+  it('creates expected general files', function () {
     const shopifyFiles = shopifyCoreFiles.map(file => `src/theme/${file}`)
     assert.file(shopifyFiles)
   })

@@ -11,6 +11,28 @@ class ShopifySkeleton extends Yeoman {
     })
     this.log(chalk.blue(greeting))
   }
+
+  mustHavePrompts () {
+    const generalOverview = cowsay.say({
+      text: 'A few general purpose questions now...',
+      cow: 'vader'
+    })
+    this.log(chalk.red(generalOverview))
+  }
+
+  setShopNowPrompt () {
+    return this.prompt([
+      {
+        type: 'confirm',
+        name: 'setShopNow',
+        message: 'Do you want to set up your shop credentials now?',
+        default: true
+      }
+    ]).then(props => {
+      this.options.setShopNow = props.setShopNow
+    })
+  }
+
   copyShopifyCoreFiles () {
     return filesToAssert.shopifyCoreFiles.map(file => {
       this.fs.copyTpl(
@@ -22,6 +44,7 @@ class ShopifySkeleton extends Yeoman {
       )
     })
   }
+
   copyBaseFiles () {
     return filesToAssert.baseFiles.map(file => {
       this.fs.copyTpl(
@@ -33,6 +56,7 @@ class ShopifySkeleton extends Yeoman {
       )
     })
   }
+
   copyGulpFiles () {
     return filesToAssert.gulpFiles.map(file => {
       this.fs.copyTpl(
@@ -44,6 +68,7 @@ class ShopifySkeleton extends Yeoman {
       )
     })
   }
+
   copyStaticFiles () {
     return filesToAssert.staticFiles.map(file => {
       this.fs.copyTpl(
