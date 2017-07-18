@@ -1,14 +1,28 @@
 import Yeoman from 'yeoman-generator'
 import cowsay from 'cowsay-browser'
+import lolcatjs from 'lolcatjs'
 import chalk from 'chalk'
 import filesToAssert from '../../lib/filesToAssert'
+import figlet from 'figlet'
 
 class ShopifySkeleton extends Yeoman {
+  configureLols () {
+    lolcatjs.options.colors = true
+
+    lolcatjs.options.animate = true
+    lolcatjs.options.duration = 15
+    lolcatjs.options.speed = 15.0
+
+    lolcatjs.options.seed = 0
+    lolcatjs.options.spread = 8.0
+    lolcatjs.options.freq = 0.15
+  }
+
   sayHello () {
-    const greeting = cowsay.say({
-      text: 'Pixel2HTML Shopify Skeleton'
-    })
-    this.log(chalk.blue(greeting))
+    const pixel = figlet.textSync('Pixel2HTML')
+    this.log(lolcatjs.fromString(pixel))
+    const skeleton = figlet.textSync('Shopify Skeleton')
+    this.log(lolcatjs.fromString(skeleton))
   }
 
   mustHavePrompts () {
