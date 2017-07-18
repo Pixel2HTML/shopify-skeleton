@@ -2,7 +2,7 @@ var gulp = require('gulp')
 var config = require('../gulp.config')
 var $ = require('gulp-load-plugins')()
 
-gulp.task('main:icons', function () {
+gulp.task('icons', function () {
   return gulp.src(config.src.icons)
     .pipe($.svgmin({
       plugins: [

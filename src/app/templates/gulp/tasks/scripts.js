@@ -37,7 +37,7 @@ gulp.task('vendor:scripts', () => {
 
 gulp.task('main:scripts', () => {
   return browserify({
-    entries: config.src.jsMain,
+    entries: config.src.scripts + '/app.js',
     debug: !production
   })
     .external(vendors)

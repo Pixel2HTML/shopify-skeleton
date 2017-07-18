@@ -1,22 +1,22 @@
-'use strict'
+const dotenv = require('dotenv')
+dotenv.config()
+
 // We use this to read flags in the command line
 const argv = require('yargs').argv
-// Add your conditions here 💅
 const production = argv.prod || argv.production
 
 module.exports = {
   theme: './deploy',
+  shopify: {
+    key: process.env.SHOP_KEY,
+    pass: process.env.SHOP_PASSWORD,
+    secret: process.env.SHOP_SECRET,
+    themeId: process.env.SHOP_THEME_ID,
+    shopName: process.env.SHOP_NAME
+  },
   src: {
-    scssMain: [
-      './src/styles/main.scss'
-    ],
-    scssFonts: [
-      './src/styles/fonts.scss'
-    ],
-    scssVendors: [
-      './src/styles/vendor.scss'
-    ],
-    jsMain: './src/scripts/app.js',
+    styles: './src/styles',
+    scripts: './src/scripts',
     fonts: [
       './src/fonts/**/*'
     ],

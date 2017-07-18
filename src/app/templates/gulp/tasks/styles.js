@@ -9,7 +9,7 @@ const moduleImporter = require('sass-module-importer')
 const destination = config.theme + '/assets'
 
 gulp.task('main:styles', function () {
-  return gulp.src(config.src.scssMain)
+  return gulp.src(config.src.styles + '/main.scss')
     .pipe(when(!production, $.sourcemaps.init()))
     .pipe($.sass({importer: moduleImporter()}))
     .on('error', $.sass.logError)
@@ -24,7 +24,7 @@ gulp.task('main:styles', function () {
 })
 
 gulp.task('font:styles', function () {
-  return gulp.src(config.src.scssMain)
+  return gulp.src(config.src.styles + '/fonts.scss')
     .pipe(when(!production, $.sourcemaps.init()))
     .pipe($.sass({importer: moduleImporter()}))
     .on('error', $.sass.logError)
@@ -39,7 +39,7 @@ gulp.task('font:styles', function () {
 })
 
 gulp.task('vendor:styles', function () {
-  return gulp.src(config.src.scssMain)
+  return gulp.src(config.src.styles + '/vendor.scss')
     .pipe(when(!production, $.sourcemaps.init()))
     .pipe($.sass({importer: moduleImporter()}))
     .on('error', $.sass.logError)
