@@ -6,8 +6,7 @@ import filesToAssert from '../../lib/filesToAssert'
 class ShopifySkeleton extends Yeoman {
   sayHello () {
     const greeting = cowsay.say({
-      text: 'Pixel2HTML Shopify Skeleton',
-      f: 'www'
+      text: 'Pixel2HTML Shopify Skeleton'
     })
     this.log(chalk.blue(greeting))
   }
@@ -15,9 +14,19 @@ class ShopifySkeleton extends Yeoman {
   mustHavePrompts () {
     const generalOverview = cowsay.say({
       text: 'A few general purpose questions now...',
-      cow: 'vader'
+      f: 'vader'
     })
     this.log(chalk.red(generalOverview))
+    return this.prompt([
+      {
+        type: 'input',
+        name: 'projectName',
+        message: 'Name of your Project?'
+      }
+    ])
+    .then(props => {
+      this.options.projectName = props.projectName
+    })
   }
 
   setShopNowPrompt () {
@@ -28,7 +37,8 @@ class ShopifySkeleton extends Yeoman {
         message: 'Do you want to set up your shop credentials now?',
         default: true
       }
-    ]).then(props => {
+    ])
+    .then(props => {
       this.options.setShopNow = props.setShopNow
     })
   }
