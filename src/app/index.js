@@ -22,6 +22,39 @@ class ShopifySkeleton extends Yeoman {
       )
     })
   }
+  copyBaseFiles () {
+    return filesToAssert.baseFiles.map(file => {
+      this.fs.copyTpl(
+        this.templatePath(`base/${file}`),
+        this.destinationPath(file),
+        {
+          author: 'Pixel2HTML'
+        }
+      )
+    })
+  }
+  copyGulpFiles () {
+    return filesToAssert.gulpFiles.map(file => {
+      this.fs.copyTpl(
+        this.templatePath(`gulp/${file}`),
+        this.destinationPath(`gulp/${file}`),
+        {
+          author: 'Pixel2HTML'
+        }
+      )
+    })
+  }
+  copyStaticFiles () {
+    return filesToAssert.staticFiles.map(file => {
+      this.fs.copyTpl(
+        this.templatePath(file),
+        this.destinationPath(file),
+        {
+          author: 'Pixel2HTML'
+        }
+      )
+    })
+  }
 }
 
 export default ShopifySkeleton
