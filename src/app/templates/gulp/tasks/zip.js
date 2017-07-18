@@ -10,5 +10,5 @@ gulp.task('zip', function () {
 
   return gulp.src(distFiles, {base: '.'})
     .pipe(zip('theme.zip')).on('error', config.onError)
-    .pipe(gulp.dest('dist/releases'))
+    .pipe(gulp.dest('releases'))
 })

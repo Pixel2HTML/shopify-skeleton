@@ -18,6 +18,6 @@ gulp.task('icons', function () {
       js2svg: { pretty: true }
     }))
     .pipe($.svgstore({inlineSvg: true}))
-    .pipe($.rename('svgs.liquid'))
+    .pipe($.rename('svg-icons.liquid'))
     .pipe(gulp.dest(config.theme + '/snippets'))
 })
