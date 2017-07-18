@@ -6,6 +6,9 @@ import { baseFiles } from '../lib/filesToAssert'
 describe('Base Files', function () {
   beforeEach(function () {
     return helpers.run(path.join(__dirname, '../generators/app'))
+      .withOptions({
+        noAnims: true
+      })
       .toPromise()
   })
 

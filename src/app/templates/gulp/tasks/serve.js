@@ -1,5 +1,5 @@
 const gulp = require('gulp')
-const config = require('../config')
+const config = require('../gulp.config')
 const browserSync = require('browser-sync')
 
 function reload (done) {

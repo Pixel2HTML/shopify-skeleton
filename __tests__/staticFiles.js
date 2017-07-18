@@ -6,10 +6,14 @@ import { staticFiles } from '../lib/filesToAssert'
 describe('Static Files', function () {
   beforeEach(function () {
     return helpers.run(path.join(__dirname, '../generators/app'))
+      .withOptions({
+        noAnims: true
+      })
       .toPromise()
   })
 
   it('creates expected static files', function () {
-    assert.file(staticFiles)
+    const compiledFiles = staticFiles.map(file => `src/${file}`)
+    assert.file(compiledFiles)
   })
 })

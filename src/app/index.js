@@ -6,24 +6,31 @@ import filesToAssert from '../../lib/filesToAssert'
 import figlet from 'figlet'
 
 class ShopifySkeleton extends Yeoman {
+  constructor (args, opts) {
+    super(args, opts)
+    this.option('noAnims')
+  }
+
   configureLols () {
-    lolcatjs.options.colors = true
+    if (!this.options.noAnims) {
+      lolcatjs.options.colors = true
 
-    lolcatjs.options.animate = true
-    lolcatjs.options.duration = 12
-    lolcatjs.options.speed = 20
+      lolcatjs.options.animate = true
+      lolcatjs.options.duration = 12
+      lolcatjs.options.speed = 20
 
-    lolcatjs.options.seed = Math.round(Math.random() * 1000)
+      lolcatjs.options.seed = Math.round(Math.random() * 1000)
 
-    lolcatjs.options.spread = 8.0
-    lolcatjs.options.freq = 0.8
+      lolcatjs.options.spread = 8.0
+      lolcatjs.options.freq = 0.8
+    }
   }
 
   sayHello () {
-    const pixel = figlet.textSync('Pixel2HTML')
-    this.log(lolcatjs.fromString(pixel))
-    const skeleton = figlet.textSync('Shopify Skeleton')
-    this.log(lolcatjs.fromString(skeleton))
+    if (!this.options.noAnims) {
+      const pixel = figlet.textSync('Pixel2HTML')
+      lolcatjs.fromString(pixel)
+    }
   }
 
   mustHavePrompts () {
@@ -98,7 +105,7 @@ class ShopifySkeleton extends Yeoman {
     return filesToAssert.staticFiles.map(file => {
       this.fs.copyTpl(
         this.templatePath(file),
-        this.destinationPath(file),
+        this.destinationPath(`src/${file}`),
         {
           author: 'Pixel2HTML'
         }

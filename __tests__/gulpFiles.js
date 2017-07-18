@@ -6,6 +6,9 @@ import { gulpFiles } from '../lib/filesToAssert'
 describe('Gulp Files', function () {
   beforeEach(function () {
     return helpers.run(path.join(__dirname, '../generators/app'))
+      .withOptions({
+        noAnims: true
+      })
       .toPromise()
   })
 

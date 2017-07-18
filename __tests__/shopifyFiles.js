@@ -6,6 +6,9 @@ import { shopifyCoreFiles } from '../lib/filesToAssert'
 describe('General Assertions', function () {
   beforeEach(function () {
     return helpers.run(path.join(__dirname, '../generators/app'))
+      .withOptions({
+        noAnims: true
+      })
       .toPromise()
   })
 
