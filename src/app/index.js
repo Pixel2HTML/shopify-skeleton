@@ -10,12 +10,13 @@ class ShopifySkeleton extends Yeoman {
     lolcatjs.options.colors = true
 
     lolcatjs.options.animate = true
-    lolcatjs.options.duration = 15
-    lolcatjs.options.speed = 15.0
+    lolcatjs.options.duration = 12
+    lolcatjs.options.speed = 20
 
-    lolcatjs.options.seed = 0
+    lolcatjs.options.seed = Math.round(Math.random() * 1000)
+
     lolcatjs.options.spread = 8.0
-    lolcatjs.options.freq = 0.15
+    lolcatjs.options.freq = 0.8
   }
 
   sayHello () {
