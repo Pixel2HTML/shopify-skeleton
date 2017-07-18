@@ -25,5 +25,3 @@ gulp.task('watch', done => {
   gulp.watch(config.src.shopify, gulp.series('shopify', reload))
   done()
 })
-
-gulp.task('serve', gulp.parallel('browser-sync', 'watch'))

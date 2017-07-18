@@ -1,7 +1,6 @@
-'use strict'
-var gulp = require('gulp')
-var config = require('../gulp.config')
-var zip = require('gulp-zip')
+const gulp = require('gulp')
+const config = require('../gulp.config')
+const zip = require('gulp-zip')
 
 gulp.task('zip', function () {
   var distFiles = [

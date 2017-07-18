@@ -1,7 +1,6 @@
-var gulp = require('gulp')
-var config = require('../gulp.config')
-
-var del = require('del')
+const gulp = require('gulp')
+const config = require('../gulp.config')
+const del = require('del')
 
 gulp.task('clean', function () {
   return del([config.theme])

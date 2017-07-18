@@ -1,4 +1,3 @@
-'use strict'
 const gulp = require('gulp')
 const config = require('../gulp.config')
 const when = require('gulp-if')

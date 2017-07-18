@@ -1,6 +1,6 @@
-var gulp = require('gulp')
-var config = require('../gulp.config')
-var $ = require('gulp-load-plugins')()
+const gulp = require('gulp')
+const config = require('../gulp.config')
+const $ = require('gulp-load-plugins')()
 
 gulp.task('icons', function () {
   return gulp.src(config.src.icons)
