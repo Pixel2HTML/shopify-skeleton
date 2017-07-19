@@ -56,11 +56,13 @@ class ShopifySkeleton extends Yeoman {
     const dogeText = 'To set up a shop now you will need to have' + '\n' +
     'private API credentials at hand see more here:' + '\n' +
     'https://help.shopify.com/api/getting-started/api-credentials'
-    const generalOverview = cowsay.think({
-      text: dogeText.trim(),
+    const muchWow = cowsay.think({
+      text: dogeText,
       f: 'doge'
     })
-    return this.log(chalk.hex('#b69a4e')(generalOverview))
+    return this.options.noAnims
+      ? this.log(chalk.magenta(muchWow))
+      : this.log(chalk.hex('#b69a4e')(muchWow))
   }
 
   setShopNowPrompt () {
