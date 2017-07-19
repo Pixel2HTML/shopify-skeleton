@@ -4,6 +4,7 @@ import lolcatjs from 'lolcatjs'
 import chalk from 'chalk'
 import filesToAssert from '../../lib/filesToAssert'
 import figlet from 'figlet'
+import parrotSay from 'parrotsay-api'
 
 class ShopifySkeleton extends Yeoman {
   constructor (args, opts) {
@@ -25,10 +26,10 @@ class ShopifySkeleton extends Yeoman {
   }
 
   sayHello () {
-    if (!this.options.noAnims) {
-      const pixel = figlet.textSync('Pixel2HTML')
-      lolcatjs.fromString(pixel)
-    }
+    const pixel = figlet.textSync('Pixel2HTML')
+    return this.options.noAnims
+      ? this.log(chalk.blue(pixel))
+      : lolcatjs.fromString(pixel)
   }
 
   vaderSays () {
@@ -184,6 +185,14 @@ class ShopifySkeleton extends Yeoman {
         }
       )
     })
+  }
+
+  sayByeBye () {
+    return this.options.noAnims
+      ? this.log(chalk.white('Thank you and Good Luck!'))
+      : parrotSay('Thank you and Good Luck! 🦄')
+        .then(this.log)
+        .catch(console.error)
   }
 }
 
