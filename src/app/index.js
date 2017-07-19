@@ -12,18 +12,16 @@ class ShopifySkeleton extends Yeoman {
   }
 
   configureLols () {
-    if (!this.options.noAnims) {
-      lolcatjs.options.colors = true
+    lolcatjs.options.colors = true
 
-      lolcatjs.options.animate = true
-      lolcatjs.options.duration = 12
-      lolcatjs.options.speed = 20
+    lolcatjs.options.animate = true
+    lolcatjs.options.duration = 8
+    lolcatjs.options.speed = 20
 
-      lolcatjs.options.seed = Math.round(Math.random() * 1000)
+    lolcatjs.options.seed = Math.round(Math.random() * 1000)
 
-      lolcatjs.options.spread = 8.0
-      lolcatjs.options.freq = 0.8
-    }
+    lolcatjs.options.spread = 8.0
+    lolcatjs.options.freq = 0.8
   }
 
   sayHello () {
@@ -33,12 +31,15 @@ class ShopifySkeleton extends Yeoman {
     }
   }
 
-  mustHavePrompts () {
+  vaderSays () {
     const generalOverview = cowsay.say({
       text: 'A few general purpose questions now...',
       f: 'vader'
     })
-    this.log(chalk.red(generalOverview))
+    return this.log(chalk.red(generalOverview))
+  }
+
+  mustHavePrompts () {
     return this.prompt([
       {
         type: 'input',
@@ -49,6 +50,17 @@ class ShopifySkeleton extends Yeoman {
     .then(props => {
       this.options.projectName = props.projectName
     })
+  }
+
+  suchTalk () {
+    const dogeText = 'To set up a shop now you will need to have' + '\n' +
+    'private API credentials at hand see more here:' + '\n' +
+    'https://help.shopify.com/api/getting-started/api-credentials'
+    const generalOverview = cowsay.think({
+      text: dogeText.trim(),
+      f: 'doge'
+    })
+    return this.log(chalk.hex('#b69a4e')(generalOverview))
   }
 
   setShopNowPrompt () {
@@ -63,6 +75,17 @@ class ShopifySkeleton extends Yeoman {
     .then(props => {
       this.options.setShopNow = props.setShopNow
     })
+  }
+
+  shopifyConfigs () {
+    return this.options.setShopNow
+      ? this.prompt([
+        {
+          type: 'input',
+          name: 'shopName'
+        }
+      ])
+      : false
   }
 
   copyShopifyCoreFiles () {
