@@ -126,18 +126,25 @@ class ShopifySkeleton extends Yeoman {
   }
 
   copyBaseFiles () {
-    const { shopName, shopKey, shopPassword, shopSecret, shopThemeId } = this.options
+    const {
+      shopName,
+      shopKey,
+      shopPassword,
+      shopSecret,
+      shopThemeId,
+      setShopNow
+    } = this.options
     return filesToAssert.baseFiles.map(file => {
       this.fs.copyTpl(
         this.templatePath(`base/${file}`),
         this.destinationPath(file),
         {
-          author: 'Pixel2HTML',
           shopName,
           shopKey,
           shopPassword,
           shopSecret,
-          shopThemeId
+          shopThemeId,
+          setShopNow
         }
       )
     })
