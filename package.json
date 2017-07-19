@@ -1,8 +1,8 @@
 {
-  "name": "generator-shop-skeleton",
+  "name": "generator-pixel2html-shopify",
   "version": "1.0.0",
-  "description": "scaffold and develop shopify themes quickly",
-  "author": "Miguel Palau <mpalauzarza@gmail.com>",
+  "description": "Scaffold and develop shopify themes quickly",
+  "author": "Miguel Palau <miguel@pixel2html.com>",
   "scripts": {
     "copy": "node lib/copy",
     "clean": "node lib/clean",
@@ -15,12 +15,13 @@
   "files": [
     "generators/app"
   ],
+  "main": "src/app/index.js",
   "keywords": [
     "yeoman-generator",
     "babel",
     "shopify"
   ],
-  "repository": "git@code.pixel2html.com:development-tools/shopify-skeleton.git",
+  "repository": "git@github.com:Pixel2HTML/shopify-skeleton.git",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.0.1",
