@@ -9,6 +9,7 @@
     "compile": " babel -d generators/ --ignore templates/ generators/",
     "get-ready": "npm run clean; npm run copy; npm run compile",
     "prepublish": "npm run get-ready",
+    "pretest": "npm run get-ready",
     "test": "jest"
   },
   "files": [

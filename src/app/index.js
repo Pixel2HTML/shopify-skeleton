@@ -114,19 +114,21 @@ class ShopifySkeleton extends Yeoman {
   }
 
   copyShopifyCoreFiles () {
+    const templates = {
+      author: 'Pixel2HTML'
+    }
     return filesToAssert.shopifyCoreFiles.map(file => {
       this.fs.copyTpl(
         this.templatePath(`theme/${file}`),
         this.destinationPath(`src/theme/${file}`),
-        {
-          author: 'Pixel2HTML'
-        }
+        templates
       )
     })
   }
 
   copyBaseFiles () {
     const {
+      projectName,
       shopName,
       shopKey,
       shopPassword,
@@ -134,18 +136,22 @@ class ShopifySkeleton extends Yeoman {
       shopThemeId,
       setShopNow
     } = this.options
+
+    const templates = {
+      projectName,
+      shopName,
+      shopKey,
+      shopPassword,
+      shopSecret,
+      shopThemeId,
+      setShopNow
+    }
+
     return filesToAssert.baseFiles.map(file => {
       this.fs.copyTpl(
         this.templatePath(`base/${file}`),
         this.destinationPath(file),
-        {
-          shopName,
-          shopKey,
-          shopPassword,
-          shopSecret,
-          shopThemeId,
-          setShopNow
-        }
+        templates
       )
     })
   }
