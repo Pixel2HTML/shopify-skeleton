@@ -1,6 +1,8 @@
 # Shopify Skeleton
 
-[![Demo Link](pixel2html-logo.png)](https://pixel2html.com/)
+<a href='https://pixel2html.com/' target='_blank'>
+  <img src='pixel2html-logo.png' width='300px' />
+</a>
 
 This is a tool for scaffolding Shopify themes quickly. Built as a starting point like Slate but with more flexibility in mind.
 
