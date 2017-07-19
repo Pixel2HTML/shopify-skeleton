@@ -1,5 +1,11 @@
 # <%= projectName %>
-## Scaffolded by Shopify Skeleton
+## Scaffolded by Shopify Skeleton Version <%= version %>
+
+Easy Shopify Development 💅
+
+## Important
+Your code will *not* compile unless you provide your Shopify API variables for the deploy task.
+Add them in the `.env` they will not be commited or shared this is for security reasons.
 
 ## Quick Start
 ```
@@ -10,7 +16,6 @@ Zip everything and code in production mode
 ```
 $ npm run build
 ```
-
 
 ## Features
 
@@ -23,12 +28,3 @@ $ npm run build
 - Based of Gulp 4
 - Live reloading with Browser Sync
 - Zip everything in the end
-
-## Roadmap
-
-- Build basic Yeoman app => May 19
-- Integrate Gulp tasks (liquid, configs, sass, es6) => May 22
-- Add starting point Shopify files => May 23
-- Add theme zipping => May 24
-- Add linters (standardJS, scss, liquid) => May 26
-- Release version 1 => May 26

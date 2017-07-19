@@ -6,6 +6,8 @@ import filesToAssert from '../../lib/filesToAssert'
 import figlet from 'figlet'
 import parrotSay from 'sync-parrot-api'
 
+const pkg = require('../../package.json')
+
 class ShopifySkeleton extends Yeoman {
   constructor (args, opts) {
     super(args, opts)
@@ -144,6 +146,8 @@ class ShopifySkeleton extends Yeoman {
       setShopNow
     } = this.options
 
+    const version = pkg.version
+
     const templates = {
       projectName,
       shopName,
@@ -151,7 +155,8 @@ class ShopifySkeleton extends Yeoman {
       shopPassword,
       shopSecret,
       shopThemeId,
-      setShopNow
+      setShopNow,
+      version
     }
 
     return filesToAssert.baseFiles.map(file => {
