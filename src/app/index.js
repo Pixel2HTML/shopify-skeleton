@@ -187,7 +187,19 @@ class ShopifySkeleton extends Yeoman {
     })
   }
 
+  _friendlyReminder () {
+    const dogeText = 'Remember to fill in the variables inside .env so gulp can run'
+    const muchWow = cowsay.think({
+      text: dogeText,
+      f: 'doge'
+    })
+    return this.options.setShopNow
+      ? false
+      : this.log(chalk.green(muchWow))
+  }
+
   end () {
+    if (!this.options.setShopNow) this._friendlyReminder()
     const message = 'Thank you and Good Luck!'
     this.options.noAnims
       ? this.log(chalk.white((message)))
