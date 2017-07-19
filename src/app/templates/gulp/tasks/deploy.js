@@ -8,7 +8,7 @@ gulp.task('deploy', () => {
     .pipe(shopify(
       config.shopify.key,
       config.shopify.pass,
-      `https://${config.shopify.shopName}.myshopify.com`,
+      `${config.shopify.shopName}.myshopify.com`,
       config.shopify.themeId,
       {basePath: config.theme}
     ))
