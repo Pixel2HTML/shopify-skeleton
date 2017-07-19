@@ -1,4 +1,5 @@
-# Shopify Skeleton
+# <%= projectName %>
+## Scaffolding by Shopify Skeleton
 
 This is a tool for scaffolding Shopify themes quickly. Built as a starting point like Slate but with more flexibility in mind.
 

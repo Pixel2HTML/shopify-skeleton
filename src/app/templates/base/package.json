@@ -1,5 +1,5 @@
 {
-  "name": "Skeleton",
+  "name": "<%= projectName %>",
   "description": "Easy Scaffolding",
   "license": "MIT",
   "repository": "http://www.pixel2html.com",

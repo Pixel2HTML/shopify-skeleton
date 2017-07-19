@@ -82,9 +82,34 @@ class ShopifySkeleton extends Yeoman {
       ? this.prompt([
         {
           type: 'input',
-          name: 'shopName'
+          name: 'shopName',
+          message: 'Shop Name (Its the part that goes before the .myshopify.com bit on the admin)'
+        },
+        {
+          type: 'input',
+          name: 'shopKey',
+          message: 'API Key'
+        }, {
+          type: 'input',
+          name: 'shopPassword',
+          message: 'Password'
+        }, {
+          type: 'input',
+          name: 'shopSecret',
+          message: 'Shared Secret'
+        }, {
+          type: 'input',
+          name: 'shopThemeId',
+          message: 'Theme ID (Create a new theme click customize HTML/CSS and its after the themes/ part on the URL)'
         }
       ])
+      .then(props => {
+        this.options.shopName = props.shopName
+        this.options.shopKey = props.shopKey
+        this.options.shopPassword = props.shopPassword
+        this.options.shopSecret = props.shopSecret
+        this.options.shopThemeId = props.shopThemeId
+      })
       : false
   }
 
@@ -101,12 +126,18 @@ class ShopifySkeleton extends Yeoman {
   }
 
   copyBaseFiles () {
+    const { shopName, shopKey, shopPassword, shopSecret, shopThemeId } = this.options
     return filesToAssert.baseFiles.map(file => {
       this.fs.copyTpl(
         this.templatePath(`base/${file}`),
         this.destinationPath(file),
         {
-          author: 'Pixel2HTML'
+          author: 'Pixel2HTML',
+          shopName,
+          shopKey,
+          shopPassword,
+          shopSecret,
+          shopThemeId
         }
       )
     })
