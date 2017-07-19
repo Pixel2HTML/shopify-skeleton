@@ -13,13 +13,3 @@ gulp.task('deploy', () => {
       {basePath: config.theme}
     ))
 })
-
-gulp.task('deploySync', () => {
-  return shopify(
-      config.shopify.key,
-      config.shopify.pass,
-      `${config.shopify.shopName}.myshopify.com`,
-      config.shopify.themeId,
-      {basePath: config.theme}
-    )
-})
