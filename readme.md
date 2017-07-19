@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Pixel2HTML/shopify-skeleton.svg?branch=master)](https://travis-ci.org/Pixel2HTML/shopify-skeleton)
+
 # Pixel2HTML Shopify Skeleton Generator 1.0.0
 
 [![Build Status](https://travis-ci.org/Pixel2HTML/pixel2html-generator.svg?branch=master)](https://travis-ci.org/Pixel2HTML/pixel2html-generator)
@@ -11,11 +13,11 @@ Brought to you by ~>
 ## Instructions
 ```
 $ npm i -g yo generator-pixel2html-shopify
-$ yo shop-skeleton
+$ yo shopify-skeleton
 ```
 
 If your terminal doesn't have TrueColor Support or doesn't handle animations properly you can run the generator with the optional flag: `
-$ yo shop-skeleton --noAnims
+$ yo shopify-skeleton --noAnims
 `
 
 ## Features
