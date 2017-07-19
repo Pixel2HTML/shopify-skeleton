@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 const gulp = require('gulp')
 const requireDir = require('require-dir')
 

@@ -116,8 +116,12 @@ class ShopifySkeleton extends Yeoman {
   }
 
   copyShopifyCoreFiles () {
+    const {
+      projectName
+    } = this.options
     const templates = {
-      author: 'Pixel2HTML'
+      author: 'Pixel2HTML',
+      projectName
     }
     return filesToAssert.shopifyCoreFiles.map(file => {
       this.fs.copyTpl(

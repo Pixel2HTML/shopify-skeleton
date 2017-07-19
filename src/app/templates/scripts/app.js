@@ -1,3 +1,6 @@
+// Module Life
+import './general'
+
 const colors = [ 'pink', 'red', 'blue' ]
 const moColors = ['blue', 'orange']
 

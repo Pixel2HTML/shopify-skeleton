@@ -1,6 +1,3 @@
-const dotenv = require('dotenv')
-dotenv.config()
-
 // We use this to read flags in the command line
 const argv = require('yargs').argv
 const production = argv.prod || argv.production

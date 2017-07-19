@@ -1,0 +1,19 @@
+$system-fonts: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+$font-family--primary: 'Open Sans', sans-serif;
+
+// Working in team with WebfontLoader to lazy load all fonts
+// https://github.com/typekit/webfontloader
+
+html {
+  font-family: $system-fonts;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.wf-active {
+    font-family: $font-family--primary;
+  }
+}
+
+body {
+  font-family: inherit;
+}

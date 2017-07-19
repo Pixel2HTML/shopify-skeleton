@@ -32,4 +32,10 @@ describe('General Assertions', function () {
     const shopifyFiles = shopifyCoreFiles.map(file => `src/theme/${file}`)
     assert.file(shopifyFiles)
   })
+
+  it('writes what we need in the shopify files', function () {
+    assert.fileContent('src/theme/layout/theme.liquid', 'Awesome Test Project')
+    assert.fileContent('src/theme/layout/checkout.liquid', 'Awesome Test Project')
+    assert.fileContent('src/theme/config/settings_schema.json', 'Awesome Test Project')
+  })
 })
