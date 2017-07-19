@@ -27,12 +27,10 @@ gulp.task('vendor:scripts', () => {
     .pipe(buffer())
     .pipe(when(!production, $.sourcemaps.init({ loadMaps: true })))
     .pipe(when(!production, $.sourcemaps.write()))
-    .pipe(gulp.dest(destination))
     // All production stuff here
     // Rename file to .min and uglify that stuff
-    .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.uglify())).on('error', config.onError)
-    .pipe(when(production, gulp.dest(destination)))
+    .pipe(gulp.dest(destination))
 })
 
 gulp.task('main:scripts', () => {
@@ -47,12 +45,11 @@ gulp.task('main:scripts', () => {
     .pipe(buffer())
     .pipe(when(!production, $.sourcemaps.init({ loadMaps: true })))
     .pipe(when(!production, $.sourcemaps.write()))
-    .pipe(gulp.dest(destination))
     // All production stuff here
     // Rename file to .min and uglify that stuff
     .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.uglify())).on('error', config.onError)
-    .pipe(when(production, gulp.dest(destination)))
+    .pipe(gulp.dest(destination))
 })
 
 gulp.task('scripts', gulp.parallel('vendor:scripts', 'main:scripts'))

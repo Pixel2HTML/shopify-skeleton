@@ -16,10 +16,8 @@ gulp.task('main:styles', function () {
     .pipe(when(production, $.groupCssMediaQueries()))
     .pipe(when(production, $.csscomb()))
     .pipe(when(!production, $.sourcemaps.write()))
-    .pipe(gulp.dest(destination))
-    .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.cssnano()))
-    .pipe(when(production, gulp.dest(destination)))
+    .pipe(gulp.dest(destination))
 })
 
 gulp.task('font:styles', function () {
@@ -31,10 +29,8 @@ gulp.task('font:styles', function () {
     .pipe(when(production, $.groupCssMediaQueries()))
     .pipe(when(production, $.csscomb()))
     .pipe(when(!production, $.sourcemaps.write()))
-    .pipe(gulp.dest(destination))
-    .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.cssnano()))
-    .pipe(when(production, gulp.dest(destination)))
+    .pipe(gulp.dest(destination))
 })
 
 gulp.task('vendor:styles', function () {
@@ -46,10 +42,9 @@ gulp.task('vendor:styles', function () {
     .pipe(when(production, $.groupCssMediaQueries()))
     .pipe(when(production, $.csscomb()))
     .pipe(when(!production, $.sourcemaps.write()))
-    .pipe(gulp.dest(destination))
     .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.cssnano()))
-    .pipe(when(production, gulp.dest(destination)))
+    .pipe(gulp.dest(destination))
 })
 
 gulp.task('styles', gulp.parallel('main:styles', 'font:styles', 'vendor:styles'))

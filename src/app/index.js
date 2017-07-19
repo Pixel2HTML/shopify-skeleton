@@ -187,11 +187,13 @@ class ShopifySkeleton extends Yeoman {
     })
   }
 
-  sayByeBye () {
+  end () {
     const message = 'Thank you and Good Luck!'
-    return this.options.noAnims
+    this.options.noAnims
       ? this.log(chalk.white((message)))
       : this.log(parrotSay(message + ' 🦄'))
+    this.log('PS: use npm run code to start')
+    return this.log('Love, Pixel2HTML')
   }
 }
 
