@@ -31,4 +31,12 @@ describe('Base Files', function () {
   it('creates expected base files', function () {
     assert.file(baseFiles)
   })
+
+  it('Writes our options where we need them', function () {
+    assert.fileContent('.env', shopName)
+    assert.fileContent('.env', shopKey)
+    assert.fileContent('.env', shopPassword)
+    assert.fileContent('.env', shopSecret)
+    assert.fileContent('.env', shopThemeId)
+  })
 })
