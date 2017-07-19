@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/Pixel2HTML/shopify-skeleton.svg?branch=master)](https://travis-ci.org/Pixel2HTML/shopify-skeleton)
-
 # Pixel2HTML Shopify Skeleton Generator 1.0.0
 
 [![Build Status](https://travis-ci.org/Pixel2HTML/pixel2html-generator.svg?branch=master)](https://travis-ci.org/Pixel2HTML/pixel2html-generator)
