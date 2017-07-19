@@ -4,7 +4,7 @@ import lolcatjs from 'lolcatjs'
 import chalk from 'chalk'
 import filesToAssert from '../../lib/filesToAssert'
 import figlet from 'figlet'
-import parrotSay from 'parrotsay-api'
+import parrotSay from 'sync-parrot-api'
 
 class ShopifySkeleton extends Yeoman {
   constructor (args, opts) {
@@ -188,11 +188,10 @@ class ShopifySkeleton extends Yeoman {
   }
 
   sayByeBye () {
+    const message = 'Thank you and Good Luck!'
     return this.options.noAnims
-      ? this.log(chalk.white('Thank you and Good Luck!'))
-      : parrotSay('Thank you and Good Luck! 🦄')
-        .then(this.log)
-        .catch(console.error)
+      ? this.log(chalk.white((message)))
+      : this.log(parrotSay(message + ' 🦄'))
   }
 }
 

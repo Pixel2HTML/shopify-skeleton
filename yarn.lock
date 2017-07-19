@@ -3104,12 +3104,6 @@ p-map@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.1.1.tgz#05f5e4ae97a068371bc2a5cc86bfbdbc19c4ae7a"
 
-parrotsay-api@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/parrotsay-api/-/parrotsay-api-0.1.1.tgz#0ea79f157357a9b0c286e9f820ead7397267f182"
-  dependencies:
-    boxen "^0.8.1"
-
 parse-glob@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/parse-glob/-/parse-glob-3.0.4.tgz#b2c376cfb11f35513badd173ef0bb6e3a388391c"
@@ -3854,6 +3848,12 @@ supports-color@^4.0.0:
 symbol-tree@^3.2.1:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
+
+sync-parrot-api@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/sync-parrot-api/-/sync-parrot-api-1.0.2.tgz#60cf6d24af6f7c7ac430def3e07bdd214dd6a275"
+  dependencies:
+    boxen "^0.8.1"
 
 table@^3.7.8:
   version "3.8.3"
