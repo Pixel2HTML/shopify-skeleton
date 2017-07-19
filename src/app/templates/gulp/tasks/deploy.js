@@ -8,12 +8,12 @@ const WE_CAN_DEPLOY = config.shopify.key && config.shopify.pass && config.shopif
 gulp.task('deploy', () => {
   return WE_CAN_DEPLOY
     ? watch(config.theme + '/{assets|layout|config|snippets|templates|locales|sections}/**/*')
-    .pipe(shopify(
-      config.shopify.key,
-      config.shopify.pass,
-      `${config.shopify.shopName}.myshopify.com`,
-      config.shopify.themeId,
-      {basePath: config.theme}
-    ))
+      .pipe(shopify(
+        config.shopify.key,
+        config.shopify.pass,
+        `${config.shopify.shopName}.myshopify.com`,
+        config.shopify.themeId,
+        {basePath: config.theme}
+      ))
     : true
 })
