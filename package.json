@@ -27,7 +27,6 @@
   "dependencies": {
     "chalk": "^2.0.1",
     "cowsay-browser": "^1.1.8",
-    "figlet": "^1.2.0",
     "lolcatjs": "^2.2.0",
     "sync-parrot-api": "^1.0.2",
     "yeoman-generator": "^1.1.1"

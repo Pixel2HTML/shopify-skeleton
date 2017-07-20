@@ -3,8 +3,9 @@ import cowsay from 'cowsay-browser'
 import lolcatjs from 'lolcatjs'
 import chalk from 'chalk'
 import filesToAssert from './lib/filesToAssert'
-import figlet from 'figlet'
 import parrotSay from 'sync-parrot-api'
+import { readFileSync } from 'fs'
+import { join as joinPath } from 'path'
 
 const pkg = require('../../package.json')
 
@@ -23,12 +24,11 @@ class ShopifySkeleton extends Yeoman {
 
     lolcatjs.options.seed = Math.round(Math.random() * 1000)
 
-    lolcatjs.options.spread = 8.0
-    lolcatjs.options.freq = 0.8
+    lolcatjs.options.spread = 4.0
   }
 
   sayHello () {
-    const pixel = figlet.textSync('Pixel2HTML')
+    const pixel = readFileSync(joinPath(__dirname, 'pxl.txt'), 'utf-8')
     return this.options.noAnims
       ? this.log(chalk.blue(pixel))
       : lolcatjs.fromString(pixel)
