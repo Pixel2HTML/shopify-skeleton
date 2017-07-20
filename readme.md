@@ -12,12 +12,15 @@ Brought to you by ~>
 ## Instructions
 ```
 $ npm i -g yo generator-pixel2html-shopify
-$ yo shopify-skeleton
+$ yo pixel2html-shopify
 ```
 
-If your terminal doesn't have TrueColor Support or doesn't handle animations properly you can run the generator with the optional flag: `
-$ yo shopify-skeleton --noAnims
-`
+If your terminal doesn't have TrueColor Support or doesn't handle animations properly you can run the generator with the optional flag:
+
+```
+$ yo pixel2html-shopify --noAnims
+
+```
 
 ## Features
 
