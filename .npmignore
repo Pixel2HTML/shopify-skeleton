@@ -1,4 +1,4 @@
-src/
-test/
+src
+__tests__
 .babelrc
 .gitlab-ci.yml
