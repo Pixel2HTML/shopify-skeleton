@@ -1,6 +1,7 @@
 # Pixel2HTML Shopify Skeleton Generator 1.0.0
 
 [![Build Status](https://travis-ci.org/Pixel2HTML/pixel2html-generator.svg?branch=master)](https://travis-ci.org/Pixel2HTML/pixel2html-generator)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 This is a tool for scaffolding Shopify themes quickly. Built as a starting point like Slate but with more flexibility in mind.
 
