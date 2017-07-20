@@ -135,6 +135,39 @@ class ShopifySkeleton extends Yeoman {
     })
   }
 
+  copyDotFiles () {
+    const {
+      projectName,
+      shopName,
+      shopKey,
+      shopPassword,
+      shopSecret,
+      shopThemeId,
+      setShopNow
+    } = this.options
+
+    const version = pkg.version
+
+    const templates = {
+      projectName,
+      shopName,
+      shopKey,
+      shopPassword,
+      shopSecret,
+      shopThemeId,
+      setShopNow,
+      version
+    }
+
+    return filesToAssert.dotfiles.map(file => {
+      this.fs.copyTpl(
+        this.templatePath(`base/${file}`),
+        this.destinationPath(`.${file}`),
+        templates
+      )
+    })
+  }
+
   copyBaseFiles () {
     const {
       projectName,

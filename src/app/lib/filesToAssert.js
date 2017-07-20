@@ -35,10 +35,13 @@ const shopifyCoreFiles = [
   'templates/search.liquid'
 ]
 
+const dotfiles = [
+  'babelrc',
+  'env',
+  'gitignore'
+]
+
 const baseFiles = [
-  '.babelrc',
-  '.env',
-  '.gitignore',
   'LICENSE',
   'editorconfig',
   'gulpfile.js',
@@ -78,5 +81,6 @@ module.exports = {
   shopifyCoreFiles,
   baseFiles,
   gulpFiles,
-  staticFiles
+  staticFiles,
+  dotfiles
 }
