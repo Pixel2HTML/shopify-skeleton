@@ -10,7 +10,8 @@
     "get-ready": "npm run clean; npm run copy; npm run compile",
     "prepublish": "npm run get-ready",
     "pretest": "npm run get-ready",
-    "test": "jest"
+    "test": "jest",
+    "postversion": "git push; git push github master; git push --tags; git push github master --tags; npm publish"
   },
   "files": [
     "generators/app"
