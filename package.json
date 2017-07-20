@@ -4,8 +4,8 @@
   "description": "Scaffold and develop shopify themes quickly",
   "author": "Miguel Palau <miguel@pixel2html.com>",
   "scripts": {
-    "copy": "node lib/copy",
-    "clean": "node lib/clean",
+    "copy": "node src/app/lib/copy",
+    "clean": "node src/app/lib/clean",
     "compile": " babel -d generators/ --ignore templates/ generators/",
     "get-ready": "npm run clean; npm run copy; npm run compile",
     "prepublish": "npm run get-ready",

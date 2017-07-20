@@ -2,7 +2,7 @@ import Yeoman from 'yeoman-generator'
 import cowsay from 'cowsay-browser'
 import lolcatjs from 'lolcatjs'
 import chalk from 'chalk'
-import filesToAssert from '../../lib/filesToAssert'
+import filesToAssert from './lib/filesToAssert'
 import figlet from 'figlet'
 import parrotSay from 'sync-parrot-api'
 

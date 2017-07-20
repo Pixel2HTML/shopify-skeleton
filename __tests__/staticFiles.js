@@ -1,14 +1,14 @@
 import helpers from 'yeoman-test'
 import assert from 'yeoman-assert'
 import path from 'path'
-import { staticFiles } from '../lib/filesToAssert'
+import { staticFiles } from '../src/app/lib/filesToAssert'
 import {
   shopName,
   shopKey,
   shopPassword,
   shopSecret,
   shopThemeId
-} from '../lib/mockPrompts'
+} from '../src/app/lib/mockPrompts'
 
 describe('Static Files', function () {
   beforeEach(function () {
