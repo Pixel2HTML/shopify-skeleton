@@ -2744,14 +2744,15 @@ log-symbols@^1.0.1:
   dependencies:
     chalk "^1.0.0"
 
-lolcatjs@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/lolcatjs/-/lolcatjs-2.1.0.tgz#3629db39010b80cf6c450412e05068b0873c5d9a"
+lolcatjs@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/lolcatjs/-/lolcatjs-2.2.0.tgz#8211640539352487d27e4dcf146ab5de78972e9f"
   dependencies:
     ansi "^0.3.0"
     line-by-line "^0.1.3"
     minimist "^1.1.1"
     multiline "^1.0.2"
+    supports-color "^4.2.0"
     terminal-kit "^0.26.0"
   optionalDependencies:
     sleep "^5.0.0"
@@ -3839,7 +3840,7 @@ supports-color@^3.1.2:
   dependencies:
     has-flag "^1.0.0"
 
-supports-color@^4.0.0:
+supports-color@^4.0.0, supports-color@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.2.0.tgz#ad986dc7eb2315d009b4d77c8169c2231a684037"
   dependencies:
