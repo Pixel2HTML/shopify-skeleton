@@ -47,7 +47,6 @@ gulp.task('main:scripts', () => {
     .pipe(when(!production, $.sourcemaps.write()))
     // All production stuff here
     // Rename file to .min and uglify that stuff
-    .pipe(when(production, $.rename({suffix: '.min'})))
     .pipe(when(production, $.uglify())).on('error', config.onError)
     .pipe(gulp.dest(destination))
 })
