@@ -11,16 +11,16 @@ Brought to you by ~>
 
 
 ## Instructions
-```
+
+```bash
 $ npm i -g yo generator-pixel2html-shopify
 $ yo pixel2html-shopify
 ```
 
 If your terminal doesn't have TrueColor Support or doesn't handle animations properly you can run the generator with the optional flag:
 
-```
+```bash
 $ yo pixel2html-shopify --noAnims
-
 ```
 
 ## Features
