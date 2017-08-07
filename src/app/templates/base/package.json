@@ -8,8 +8,8 @@
     "start": "npm install",
     "code": "gulp",
     "build": "gulp release --prod",
-    "deploy": "gulp upload",
-    "deploy-prod": "gulp upload --prod"
+    "deploy": "gulp full-deploy --prod",
+    "kill-theme": "gulp kill:theme"
   },
   "dependencies": {
     "babel-preset-env": "^1.5.2",
@@ -30,7 +30,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-shopify-upload-with-callbacks": "^2.1.17",
+    "gulp-shopify-theme": "^1.0.14",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-svgmin": "^1.2.4",
     "gulp-svgstore": "^6.1.0",
