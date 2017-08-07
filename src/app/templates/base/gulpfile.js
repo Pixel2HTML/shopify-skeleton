@@ -19,5 +19,6 @@ gulp.task('build', gulp.series(
 ))
 
 gulp.task('release', gulp.series('build', 'zip'))
-gulp.task('serve', gulp.parallel('browser-sync', 'watch', 'deploy'))
+gulp.task('serve', gulp.parallel('browser-sync', 'watch', 'deploy:watch'))
+gulp.task('upload', gulp.series('build', 'zip', 'deploy'))
 gulp.task('default', gulp.series('build', 'serve'))
