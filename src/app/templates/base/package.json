@@ -7,7 +7,9 @@
   "scripts": {
     "start": "npm install",
     "code": "gulp",
-    "build": "gulp release --prod"
+    "build": "gulp release --prod",
+    "deploy": "gulp upload",
+    "deploy-prod": "gulp upload --prod"
   },
   "dependencies": {
     "babel-preset-env": "^1.5.2",
