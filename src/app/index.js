@@ -182,7 +182,7 @@ class ShopifySkeleton extends Yeoman {
     const version = pkg.version
 
     const templates = {
-      projectName,
+      projectName: projectName.split(' ').join('-'),
       shopName,
       shopKey,
       shopPassword,
