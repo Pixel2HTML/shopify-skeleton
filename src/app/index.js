@@ -1,6 +1,5 @@
 import Yeoman from 'yeoman-generator'
 import cowsay from 'cowsay-browser'
-import lolcatjs from 'lolcatjs'
 import chalk from 'chalk'
 import filesToAssert from './lib/filesToAssert'
 import parrotSay from 'sync-parrot-api'
@@ -10,28 +9,9 @@ import { join as joinPath } from 'path'
 const pkg = require('../../package.json')
 
 class ShopifySkeleton extends Yeoman {
-  constructor (args, opts) {
-    super(args, opts)
-    this.option('noAnims')
-  }
-
-  configureLols () {
-    lolcatjs.options.colors = true
-
-    lolcatjs.options.animate = true
-    lolcatjs.options.duration = 8
-    lolcatjs.options.speed = 20
-
-    lolcatjs.options.seed = Math.round(Math.random() * 1000)
-
-    lolcatjs.options.spread = 4.0
-  }
-
   sayHello () {
     const pixel = readFileSync(joinPath(__dirname, 'pxl.txt'), 'utf-8')
-    return this.options.noAnims
-      ? this.log(chalk.blue(pixel))
-      : lolcatjs.fromString(pixel)
+    this.log(chalk.blue(pixel))
   }
 
   vaderSays () {
