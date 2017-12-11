@@ -1,19 +1,30 @@
 // We use this to read flags in the command line
-const argv = require('yargs').argv
-const production = argv.prod || argv.production
+const production = process.env.NODE_ENV === 'production'
+const debug = process.env.DEBUG_MODE === 'true'
 
 module.exports = {
-  theme: './deploy',
+  theme: '.deploy',
   shopify: {
     key: process.env.SHOP_KEY,
     pass: process.env.SHOP_PASSWORD,
     secret: process.env.SHOP_SECRET,
     themeId: process.env.SHOP_THEME_ID,
-    shopName: process.env.SHOP_NAME
+    shopName: process.env.SHOP_NAME,
+    flatFolders: [
+      'config',
+      'layout',
+      'locales',
+      'templates',
+      'assets'
+    ],
+    multiLevelFolders: [
+      'sections',
+      'snippets'
+    ]
   },
   src: {
     styles: './src/styles',
-    scripts: './src/scripts',
+    scripts: 'src/scripts',
     fonts: [
       './src/fonts/**/*'
     ],
@@ -21,18 +32,42 @@ module.exports = {
       './src/icons/**/*'
     ],
     images: [
-      './src/images/**/*'
+      './src/images/**/*.{svg,png,jpg,jpeg,gif,ico}'
     ],
     shopify: [
       './src/theme/**/*'
-    ]
+    ],
+    theme: './src/theme'
   },
-  scriptVendors: [
-    'jquery'
-  ],
   onError: function (error) {
     console.log(error.toString())
     this.emit('end')
   },
-  production: !!production
+  production,
+  debug,
+  // For autoprefixer
+  browsers: [
+    'last 2 Chrome versions',
+    'last 2 ChromeAndroid versions',
+    'last 2 Firefox versions',
+    'last 2 Safari versions',
+    'last 2 ios versions',
+    'last 1 ie versions',
+    'last 2 Edge versions',
+    'last 2 Opera versions'
+  ],
+  appendLiquidExt: path => {
+    if (path.extname === '.map') return
+    if (path.extname === '.css') {
+      path.extname = '.scss'
+    }
+    path.basename += path.extname
+    path.extname = '.liquid'
+  },
+  makeLiquidSourceMappingURL: file => `{{ "${file.relative}.map" | asset_url }}`,
+  flatten: path => {
+    if (path.dirname !== '.') {
+      path.basename = path.dirname.replace('/', '_') + '_' + path.basename
+    }
+  }
 }
