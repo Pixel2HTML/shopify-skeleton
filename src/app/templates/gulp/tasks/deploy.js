@@ -15,8 +15,7 @@ const shopifyConfig = {
   password: config.shopify.pass,
   shared_secret: config.shopify.secret,
   shop_name: config.shopify.shopName,
-  theme_id: config.shopify.themeId,
-  root: process.cwd() + '/' + config.theme
+  theme_id: config.shopify.themeId
 }
 
 const CAN_DEPLOY = () => {
