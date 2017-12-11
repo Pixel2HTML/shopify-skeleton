@@ -5,7 +5,7 @@ const $ = require('gulp-load-plugins')()
 const createShopifyTask = name => {
   gulp.task(`shopify:${name}`, () =>
     gulp.src(config.src.theme + `/${name}/**/*`)
-      .pipe($.changedInPlace())
+      .pipe($.changedInPlace({firstPass: true}))
       .pipe(gulp.dest(config.theme + `/${name}`))
   )
 }
@@ -13,7 +13,7 @@ const createShopifyTask = name => {
 const flattenShopifyTask = name => {
   gulp.task(`shopify:${name}`, () =>
     gulp.src(config.src.theme + `/${name}/**/*`)
-      .pipe($.changedInPlace())
+      .pipe($.changedInPlace({firstPass: true}))
       .pipe($.flatten())
       .pipe(gulp.dest(config.theme + `/${name}`))
   )
@@ -22,7 +22,11 @@ const flattenShopifyTask = name => {
 config.shopify.flatFolders.forEach(createShopifyTask)
 config.shopify.multiLevelFolders.forEach(flattenShopifyTask)
 
-gulp.task('shopify', () =>
-  gulp.src(config.src.shopify)
-    .pipe(gulp.dest(config.theme))
-)
+const allFolders = [
+  ...config.shopify.flatFolders,
+  ...config.shopify.multiLevelFolders
+]
+
+const shopifyTaskNames = allFolders.map(folder => `shopify:${folder}`)
+
+gulp.task('shopify', gulp.parallel(...shopifyTaskNames))

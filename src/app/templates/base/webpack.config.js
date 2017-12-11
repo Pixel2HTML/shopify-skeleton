@@ -31,10 +31,6 @@ let plugins = [
     name: 'vendor',
     minChunks: module => /node_modules/.test(module.resource)
   }),
-  // Log our build stats
-  new WebpackMonitor({
-    target: cwd() + '/gulp/stats.json'
-  }),
   // Do NOT import the BLOAT from moment.js
   // thanks create-react-app
   new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
