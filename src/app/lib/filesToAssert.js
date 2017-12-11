@@ -73,10 +73,7 @@ const staticFiles = [
   'fonts/.gitkeep',
   'icons/gulp.svg',
   'images/shopify.svg',
-  'scripts/app.js',
-  'scripts/general/jquery.js',
-  'scripts/general/fonts.js',
-  'scripts/general/index.js',
+  'scripts/index.js',
   'styles/main.scss',
   'styles/vendor.scss'
 ]
