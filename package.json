@@ -1,6 +1,6 @@
 {
   "name": "generator-pixel2html-shopify",
-  "version": "3.0.0-beta.4",
+  "version": "3.0.0-beta.5",
   "description": "Scaffold and develop shopify themes quickly",
   "author": "Miguel Palau <miguel@pixel2html.com>",
   "scripts": {
