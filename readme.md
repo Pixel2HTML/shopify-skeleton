@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/generator-pixel2html-shopify.svg)](https://badge.fury.io/js/generator-pixel2html-shopify)
 [![Build Status](https://travis-ci.org/Pixel2HTML/pixel2html-generator.svg?branch=master)](https://travis-ci.org/Pixel2HTML/pixel2html-generator)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![dependencies Status](https://david-dm.org/Pixel2HTML/shopify-skeleton/status.svg)](https://david-dm.org/Pixel2HTML/shopify-skeleton)
 
 This is a tool for scaffolding Shopify themes quickly. Built as a starting point like Slate but with more flexibility in mind.
 
