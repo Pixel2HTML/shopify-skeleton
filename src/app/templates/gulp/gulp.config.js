@@ -11,11 +11,11 @@ module.exports = {
     themeId: process.env.SHOP_THEME_ID,
     shopName: process.env.SHOP_NAME,
     flatFolders: [
+      'assets',
       'config',
       'layout',
       'locales',
-      'templates',
-      'assets'
+      'templates'
     ],
     multiLevelFolders: [
       'sections',
