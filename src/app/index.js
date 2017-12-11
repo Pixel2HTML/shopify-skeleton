@@ -3,17 +3,10 @@ import cowsay from 'cowsay-browser'
 import chalk from 'chalk'
 import filesToAssert from './lib/filesToAssert'
 import parrotSay from 'sync-parrot-api'
-import { readFileSync } from 'fs'
-import { join as joinPath } from 'path'
 
 const pkg = require('../../package.json')
 
 class ShopifySkeleton extends Yeoman {
-  sayHello () {
-    const pixel = readFileSync(joinPath(__dirname, 'pxl.txt'), 'utf-8')
-    this.log(chalk.blue(pixel))
-  }
-
   vaderSays () {
     const generalOverview = cowsay.say({
       text: 'A few general purpose questions now...',

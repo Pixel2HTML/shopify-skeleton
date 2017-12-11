@@ -1,54 +1,21 @@
 const gulp = require('gulp')
-const $ = require('gulp-load-plugins')()
-const when = require('gulp-if')
-const browserify = require('browserify')
-const source = require('vinyl-source-stream')
-const buffer = require('vinyl-buffer')
-const babel = require('babelify')
-
 const config = require('../gulp.config')
-const transform = [ babel ]
-const vendors = config.scriptVendors
-const production = config.production
-const destination = config.theme + '/assets'
+const webpack = require('webpack')
+const wp = require('webpack-stream')
+const webpackConfig = require('../../webpack.config')
+const $ = require('gulp-load-plugins')()
 
-gulp.task('vendor:scripts', () => {
-  const b = browserify({
-    debug: !production
-  })
+gulp.task('webpack', () =>
+  gulp.src(config.src.scripts + '/index.js')
+    .pipe(wp(webpackConfig, webpack)).on('error', config.onError)
+    .pipe(gulp.dest(config.theme + '/assets'))
+)
 
-  // require all libs specified in vendors array
-  vendors.forEach(lib => {
-    b.require(lib)
-  })
+gulp.task('legacy', () =>
+  gulp.src(config.src.scripts + '/__legacy__/*.js')
+    .pipe($.concat('js_libs.js'))
+    .pipe($.uglify())
+    .pipe(gulp.dest(config.theme + '/assets'))
+)
 
-  return b.bundle()
-    .pipe(source('vendor.js'))
-    .pipe(buffer())
-    .pipe(when(!production, $.sourcemaps.init({ loadMaps: true })))
-    .pipe(when(!production, $.sourcemaps.write()))
-    // All production stuff here
-    // Rename file to .min and uglify that stuff
-    .pipe(when(production, $.uglify())).on('error', config.onError)
-    .pipe(gulp.dest(destination))
-})
-
-gulp.task('main:scripts', () => {
-  return browserify({
-    entries: config.src.scripts + '/app.js',
-    debug: !production
-  })
-    .external(vendors)
-    .transform(transform)
-    .bundle().on('error', config.onError)
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(when(!production, $.sourcemaps.init({ loadMaps: true })))
-    .pipe(when(!production, $.sourcemaps.write()))
-    // All production stuff here
-    // Rename file to .min and uglify that stuff
-    .pipe(when(production, $.uglify())).on('error', config.onError)
-    .pipe(gulp.dest(destination))
-})
-
-gulp.task('scripts', gulp.parallel('vendor:scripts', 'main:scripts'))
+gulp.task('scripts', gulp.parallel('webpack', 'legacy'))

@@ -36,8 +36,8 @@ const shopifyCoreFiles = [
 ]
 
 const dotfiles = [
-  'babelrc',
   'env',
+  'env.example',
   'gitignore'
 ]
 
@@ -46,7 +46,8 @@ const baseFiles = [
   'editorconfig',
   'gulpfile.js',
   'package.json',
-  'readme.md'
+  'readme.md',
+  'webpack.config.js'
 ]
 
 const gulpFiles = [
@@ -61,7 +62,11 @@ const gulpFiles = [
   'tasks/serve.js',
   'tasks/shopify.js',
   'tasks/styles.js',
-  'tasks/zip.js'
+  'tasks/watch.js',
+  'tasks/zip.js',
+  // Server
+  'server/createCert.js',
+  'server/self-signed-options.js'
 ]
 
 const staticFiles = [
@@ -72,7 +77,6 @@ const staticFiles = [
   'scripts/general/jquery.js',
   'scripts/general/fonts.js',
   'scripts/general/index.js',
-  'styles/fonts.scss',
   'styles/main.scss',
   'styles/vendor.scss'
 ]

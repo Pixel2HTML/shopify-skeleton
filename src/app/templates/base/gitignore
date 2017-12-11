@@ -4,3 +4,4 @@ deploy/*
 dist
 releases
 .DS_Store
+settings_data.json

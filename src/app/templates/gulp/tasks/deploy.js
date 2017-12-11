@@ -4,13 +4,19 @@ const config = require('../gulp.config')
 const shopify = require('gulp-shopify-theme')
 const theme = shopify.create()
 
+const browserSync = require('browser-sync')
+
+const reload = () => {
+  browserSync.reload()
+}
+
 const shopifyConfig = {
   api_key: config.shopify.key,
   password: config.shopify.pass,
   shared_secret: config.shopify.secret,
   shop_name: config.shopify.shopName,
   theme_id: config.shopify.themeId,
-  root: process.cwd() + '/deploy'
+  root: process.cwd() + '/' + config.theme
 }
 
 const CAN_DEPLOY = () => {
@@ -25,21 +31,25 @@ gulp.task('theme:init', done => {
   done()
 })
 
-gulp.task('theme:watch', () => {
-  return CAN_DEPLOY()
-  ? watch(themeFiles)
-    .pipe(theme.stream())
-    .on('error', config.onError)
-  : null
+gulp.task('theme:watch', done => {
+  if (CAN_DEPLOY()) {
+    watch(themeFiles)
+      .pipe(theme.stream(undefined, () => {
+        reload()
+        done()
+      }))
+      .on('error', config.onError)
+  } else {
+    done()
+  }
 })
 
-gulp.task('theme:upload', () => {
-  return CAN_DEPLOY()
+gulp.task('theme:upload', () => CAN_DEPLOY()
   ? gulp.src(themeFiles)
     .pipe(theme.stream())
     .on('error', config.onError)
   : null
-})
+)
 
 gulp.task('deploy', gulp.series('theme:init', 'theme:upload'))
 
