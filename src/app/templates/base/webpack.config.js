@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const config = require('./gulp/gulp.config')
-const {cwd} = require('process')
+const {cwd, env} = require('process')
 
 const production = config.production
 const debug = config.debug
@@ -13,10 +13,16 @@ const ENTRY_PATH = cwd() + '/' + config.src.scripts
 const OUTPUT_PATH = cwd() + '/' + config.theme + '/assets'
 
 let plugins = [
+  // Add the env to remove excess skin
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify(env.NODE_ENV)
+    }
+  }),
   new webpack.SourceMapDevToolPlugin({
     filename: '[name].js.map',
     append: '\n//# sourceMappingURL={{ "[url]" | asset_url }}',
-    test: /(\.js|\.liquid)$/
+    test: /\.(js|liquid)$/
   }),
   // Add module names to factory functions so they appear in browser profiler.
   new webpack.NamedModulesPlugin(),
@@ -37,14 +43,13 @@ let plugins = [
 ]
 
 const productionPlugins = [
-  // Add the env to remove excess skin
-  new webpack.DefinePlugin({
-    'process.env': { 'NODE_ENV': JSON.stringify('production') }
-  }),
   // Concatenate modules for smaller builds
   new webpack.optimize.ModuleConcatenationPlugin(),
   // Uglify the heck out of this
-  new UglifyJSPlugin({sourceMap: true})
+  new UglifyJSPlugin({
+    sourceMap: true,
+    test: /\.(js|liquid)$/
+  })
 ]
 
 const debugPlugins = [
@@ -62,16 +67,27 @@ if (debug) plugins = [...plugins, ...debugPlugins]
 const CONFIG = {
   entry: ENTRY_PATH,
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['timmy']
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        use: {
+          loader: 'eslint-loader'
+        }
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['timmy']
+          }
         }
       }
-    }]},
+    ]
+  },
   output: {
     filename: debug ? '[name].js' : '[name].js.liquid',
     path: OUTPUT_PATH
