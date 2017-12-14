@@ -41,7 +41,9 @@ module.exports = {
   },
   onError: function (error) {
     console.log(error.toString())
-    this.emit('end')
+    production
+      ? process.exit(1)
+      : this.emit('end')
   },
   production,
   debug,
