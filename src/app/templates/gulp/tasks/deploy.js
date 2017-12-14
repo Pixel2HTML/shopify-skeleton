@@ -18,32 +18,27 @@ const shopifyConfig = {
   theme_id: config.shopify.themeId
 }
 
-const CAN_DEPLOY = () => {
-  const validKeys = Object.keys(shopifyConfig).filter(key => shopifyConfig[key])
-  return validKeys.length > 0
-}
+const validKeys = Object.keys(shopifyConfig).filter(key => shopifyConfig[key])
+const CAN_DEPLOY = validKeys.length > 0
 
-const themeFiles = config.theme + '/{assets,layout,config,snippets,templates,locales,sections}/**/*.*'
+const themeFiles = config.theme + '/{assets,layout,config,snippets,templates,locales,sections}/**/*'
 
 gulp.task('theme:init', done => {
-  if (CAN_DEPLOY()) theme.init(shopifyConfig)
+  if (CAN_DEPLOY) theme.init(shopifyConfig)
   done()
 })
 
-gulp.task('theme:watch', done => {
-  if (CAN_DEPLOY()) {
-    watch(themeFiles)
+gulp.task('theme:watch', done =>
+  CAN_DEPLOY
+    ? watch(themeFiles, {verbose: true})
       .pipe(theme.stream(undefined, () => {
         reload()
         done()
-      }))
-      .on('error', config.onError)
-  } else {
-    done()
-  }
-})
+      })).on('error', config.onError)
+    : done()
+)
 
-gulp.task('theme:upload', () => CAN_DEPLOY()
+gulp.task('theme:upload', () => CAN_DEPLOY
   ? gulp.src(themeFiles)
     .pipe(theme.stream())
     .on('error', config.onError)
