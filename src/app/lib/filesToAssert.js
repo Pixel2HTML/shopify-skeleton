@@ -63,10 +63,7 @@ const gulpFiles = [
   'tasks/shopify.js',
   'tasks/styles.js',
   'tasks/watch.js',
-  'tasks/zip.js',
-  // Server
-  'server/createCert.js',
-  'server/self-signed-options.js'
+  'tasks/zip.js'
 ]
 
 const staticFiles = [

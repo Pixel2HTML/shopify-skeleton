@@ -1,6 +1,6 @@
 {
   "name": "<%= projectName %>",
-  "description": "Easy Scaffolding",
+  "description": "Easy Scaffolding powered by Pixel2Html Shopify Skeleton",
   "license": "MIT",
   "repository": "http://www.pixel2html.com",
   "version": "1.0.0",
@@ -20,11 +20,11 @@
     "lint": "npm run lint:js; npm run lint:scss"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.34",
-    "@babel/runtime": "^7.0.0-beta.34",
+    "@babel/core": "^7.0.0-beta.35",
+    "@babel/runtime": "^7.0.0-beta.35",
     "babel-loader": "8.0.0-beta.0",
-    "babel-preset-timmy": "^0.3.0",
-    "browser-sync": "^2.18.12",
+    "babel-preset-timmy": "^0.4.0",
+    "browser-sync": "^2.18.13",
     "cross-env": "^5.1.1",
     "del": "^3.0.0",
     "dotenv": "^4.0.0",
@@ -42,7 +42,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-shopify-theme": "mike3run/gulp-shopify-theme",
-    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-svgmin": "^1.2.4",
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^3.0.0",
@@ -52,35 +52,25 @@
     "postcss-sass": "^0.2.0",
     "require-dir": "^0.3.2",
     "sass-module-importer": "^1.4.0",
-    "svg4everybody": "^2.1.8",
-    "uglifyjs-webpack-plugin": "^1.1.2",
+    "svg4everybody": "^2.1.9",
+    "uglifyjs-webpack-plugin": "^1.1.4",
     "webpack": "^3.10.0",
     "webpack-stream": "^4.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.12.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "create-cert-files": "^1.0.2",
+    "eslint": "^4.13.1",
+    "eslint-config-pixel2html": "^1.0.0",
     "react-dev-utils": "^4.2.1",
-    "selfsigned": "^1.10.1",
     "stylelint": "^8.3.1",
-    "stylelint-config-timmy-scss": "^0.1.1",
+    "stylelint-config-pixel2html": "^0.1.1",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-monitor": "^1.0.14"
   },
   "stylelint": {
-    "extends": "stylelint-config-timmy-scss"
+    "extends": "stylelint-config-pixel2html"
   },
   "eslintConfig": {
-    "extends": "standard",
-    "globals": {
-      "$": false,
-      "jQuery": false,
-      "jquery": false
-    }
+    "extends": "pixel2html"
   }
 }

@@ -9,7 +9,7 @@ const DEFAULT_PORT = 3000
 const HOST = '0.0.0.0'
 const protocol = 'https'
 
-const fakeCert = require('../server/createCert')
+const fakeCert = require('create-cert-files')()
 
 gulp.task('browser-sync', done => {
   choosePort(HOST, DEFAULT_PORT)
