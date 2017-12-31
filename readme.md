@@ -21,7 +21,7 @@ $ yo @pixel2html/shop-generator
 ## Features
 
 - Sourcemaps
-- JS with Browserify and ES6 (Just require your problems away)
+- JS with Webpack and ES6 (Just require your problems away)
 - Split vendor and app code (both JS and SCSS)
 - SVG System
 - Shopify Plus in mind (Checkout layouts)
