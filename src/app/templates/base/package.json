@@ -54,8 +54,7 @@
     "sass-module-importer": "^1.4.0",
     "svg4everybody": "^2.1.9",
     "uglifyjs-webpack-plugin": "^1.1.4",
-    "webpack": "^3.10.0",
-    "webpack-stream": "^4.0.0"
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "create-cert-files": "^1.0.2",
