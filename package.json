@@ -8,7 +8,7 @@
     "clean": "node src/app/lib/clean",
     "compile": " babel -d generators/ --ignore templates/ generators/",
     "get-ready": "npm run clean; npm run copy; npm run compile",
-    "prepublish": "npm run get-ready",
+    "prepublishOnly": "npm run get-ready",
     "pretest": "npm run get-ready",
     "test": "standard; jest",
     "postversion": "git push; git push --tags"
