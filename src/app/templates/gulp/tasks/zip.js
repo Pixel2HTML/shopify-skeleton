@@ -1,14 +1,22 @@
 const gulp = require('gulp')
 const config = require('../gulp.config')
 const zip = require('gulp-zip')
+const pkg = require('../../package.json')
+const version = pkg.version
+const zipName = `v.${version}.zip`
 
-gulp.task('zip', function () {
+const openBrowser = require('react-dev-utils/openBrowser')
+
+gulp.task('zip', done => {
   var distFiles = [
     `${config.theme}/**`,
     `!${config.theme}`
   ]
 
-  return gulp.src(distFiles, {base: '.'})
-    .pipe(zip('theme.zip')).on('error', config.onError)
+  gulp.src(distFiles, {base: '.'})
+    .pipe(zip(zipName)).on('error', config.onError)
     .pipe(gulp.dest('releases'))
+
+  openBrowser(`https://${config.shopify.shopName}.myshopify.com/admin/themes`)
+  done()
 })
