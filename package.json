@@ -1,5 +1,5 @@
 {
-  "name": "@pixel2html/shop-generator",
+  "name": "@pixel2html/generator-shopify",
   "version": "3.0.2",
   "description": "Scaffold and develop shopify themes quickly",
   "author": "Miguel Palau <miguel@pixel2html.com>",
