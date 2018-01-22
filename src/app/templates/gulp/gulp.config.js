@@ -3,7 +3,7 @@ const production = process.env.NODE_ENV === 'production'
 const debug = process.env.DEBUG_MODE === 'true'
 
 module.exports = {
-  theme: '.deploy',
+  theme: 'dist',
   shopify: {
     key: process.env.SHOP_KEY,
     pass: process.env.SHOP_PASSWORD,

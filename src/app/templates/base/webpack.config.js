@@ -82,7 +82,10 @@ const CONFIG = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['timmy']
+            presets: [
+              require.resolve('@pixel2html/babel-preset')
+            ],
+            cacheDirectory: true
           }
         }
       }

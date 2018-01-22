@@ -10,8 +10,8 @@
 
     <meta name="theme-color" content="#000000">
 
-    {{ 'vendor.css' | asset_url | stylesheet_tag }}
-    {{ 'main.css' | asset_url | stylesheet_tag }}
+    {{ 'vendor.scss' | asset_url | stylesheet_tag }}
+    {{ 'main.scss' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
   </head>
 
@@ -21,6 +21,6 @@
     {{ content_for_layout }}
     {{ "https://code.jquery.com/jquery-3.2.1.min.js" | script_tag }}
     {{ "vendor.js" | asset_url | script_tag }}
-    {{ "app.js" | asset_url | script_tag }}
+    {{ "main.js" | asset_url | script_tag }}
   </body>
 </html>
