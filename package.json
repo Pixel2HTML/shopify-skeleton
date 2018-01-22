@@ -31,30 +31,30 @@
     "yeoman-generator": "^2.0.2"
   },
   "devDependencies": {
+    "@pixel2html/eslint-config": "^1.0.0",
     "babel-cli": "^6.26.0",
     "babel-jest": "^22.1.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
+    "eslint": "^4.14.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
     "fs-extra": "^5.0.0",
     "jest": "^22.1.4",
     "npm-bump": "^0.0.23",
-    "standard": "^10.0.3",
     "yeoman-assert": "^3.1.0",
     "yeoman-test": "^1.7.0"
   },
-  "standard": {
-    "globals": [
-      "describe",
-      "it",
-      "before",
-      "beforeEach",
-      "after",
-      "afterEach",
-      "xdescribe",
-      "xit"
-    ]
-  },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "eslintConfig": {
+    "extends": "@pixel2html/eslint-config",
+    "env": {
+      "browser": true,
+      "node": true,
+      "mocha": true
+    }
   }
 }
