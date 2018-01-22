@@ -28,15 +28,15 @@
     "chalk": "^2.3.0",
     "cowsay-browser": "^1.1.8",
     "sync-parrot-api": "^1.0.2",
-    "yeoman-generator": "^2.0.1"
+    "yeoman-generator": "^2.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-jest": "^21.2.0",
+    "babel-jest": "^22.1.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
-    "fs-extra": "^4.0.3",
-    "jest": "^21.2.1",
+    "fs-extra": "^5.0.0",
+    "jest": "^22.1.4",
     "npm-bump": "^0.0.23",
     "standard": "^10.0.3",
     "yeoman-assert": "^3.1.0",
