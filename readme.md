@@ -14,8 +14,8 @@ Brought to you by ~>
 ## Instructions
 
 ```bash
-$ npm i -g yo @pixel2html/shop-generator
-$ yo @pixel2html/shop-generator
+$ npm i -g yo @pixel2html/generator-shopify
+$ yo @pixel2html/shopify
 ```
 
 ## Features
