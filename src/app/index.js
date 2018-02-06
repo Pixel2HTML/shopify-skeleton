@@ -4,6 +4,9 @@ import chalk from 'chalk'
 import filesToAssert from './lib/filesToAssert'
 import parrotSay from 'sync-parrot-api'
 
+import filter from 'gulp-filter'
+import prettify from 'gulp-jsbeautifier'
+
 const pkg = require('../../package.json')
 
 class ShopifySkeleton extends Yeoman {
@@ -21,11 +24,18 @@ class ShopifySkeleton extends Yeoman {
         type: 'input',
         name: 'projectName',
         message: 'Name of your Project?'
+      },
+      {
+        type: 'confirm',
+        name: 'npmInstall',
+        message: 'Want me to run npm install after we\'re done?',
+        default: false
       }
     ])
-    .then(props => {
-      this.options.projectName = props.projectName
-    })
+      .then(props => {
+        this.options.projectName = props.projectName
+        this.options.npmInstall = props.npmInstall
+      })
   }
 
   suchTalk () {
@@ -50,9 +60,9 @@ class ShopifySkeleton extends Yeoman {
         default: true
       }
     ])
-    .then(props => {
-      this.options.setShopNow = props.setShopNow
-    })
+      .then(props => {
+        this.options.setShopNow = props.setShopNow
+      })
   }
 
   shopifyConfigs () {
@@ -81,13 +91,13 @@ class ShopifySkeleton extends Yeoman {
           message: 'Theme ID (Create a new theme click customize HTML/CSS and its after the themes/ part on the URL)'
         }
       ])
-      .then(props => {
-        this.options.shopName = props.shopName
-        this.options.shopKey = props.shopKey
-        this.options.shopPassword = props.shopPassword
-        this.options.shopSecret = props.shopSecret
-        this.options.shopThemeId = props.shopThemeId
-      })
+        .then(props => {
+          this.options.shopName = props.shopName
+          this.options.shopKey = props.shopKey
+          this.options.shopPassword = props.shopPassword
+          this.options.shopSecret = props.shopSecret
+          this.options.shopThemeId = props.shopThemeId
+        })
       : false
   }
 
@@ -196,6 +206,24 @@ class ShopifySkeleton extends Yeoman {
         }
       )
     })
+  }
+
+  install () {
+    this.options.npmInstall
+      ? this.npmInstall()
+      : this.log('Skipping npm install')
+  }
+
+  eslintJs () {
+    this.log('Pretty JS and JSON 🙌')
+    const jsFilter = filter(['**/*.js', '**/*.json'], { restore: true })
+    this.registerTransformStream([
+      jsFilter,
+      prettify({
+        indent_size: 2
+      }),
+      jsFilter.restore
+    ])
   }
 
   end () {

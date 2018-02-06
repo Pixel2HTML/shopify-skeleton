@@ -9,8 +9,9 @@
     "compile": " babel -d generators/ --ignore templates/ generators/",
     "get-ready": "npm run clean; npm run copy; npm run compile",
     "prepare": "npm run get-ready",
+    "lint": "eslint 'src/**/*.js'",
     "pretest": "npm run get-ready",
-    "test": "standard; jest",
+    "test": "npm run lint; jest",
     "postversion": "git push; git push --tags"
   },
   "files": [
@@ -27,6 +28,8 @@
   "dependencies": {
     "chalk": "^2.3.0",
     "cowsay-browser": "^1.1.8",
+    "gulp-filter": "^5.1.0",
+    "gulp-jsbeautifier": "^2.1.2",
     "sync-parrot-api": "^1.0.2",
     "yeoman-generator": "^2.0.2"
   },
