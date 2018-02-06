@@ -6,10 +6,15 @@ import parrotSay from 'sync-parrot-api'
 
 import filter from 'gulp-filter'
 import prettify from 'gulp-jsbeautifier'
+import updateNotifier from 'update-notifier'
 
 const pkg = require('../../package.json')
 
 class ShopifySkeleton extends Yeoman {
+  notify () {
+    updateNotifier({pkg}).notify()
+  }
+
   vaderSays () {
     const generalOverview = cowsay.say({
       text: 'A few general purpose questions now...',
