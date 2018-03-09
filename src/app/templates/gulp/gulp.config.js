@@ -4,6 +4,7 @@ const debug = process.env.DEBUG_MODE === 'true'
 
 module.exports = {
   theme: 'dist',
+  scripts: 'src/scripts',
   shopify: {
     key: process.env.SHOP_KEY,
     pass: process.env.SHOP_PASSWORD,
@@ -24,7 +25,7 @@ module.exports = {
   },
   src: {
     styles: './src/styles',
-    scripts: 'src/scripts',
+    scripts: './src/scripts',
     fonts: [
       './src/fonts/**/*'
     ],
