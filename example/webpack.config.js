@@ -12,7 +12,7 @@ const debug = config.debug
 const WebpackMonitor = require('webpack-monitor')
 
 // When you really want to make the relationship work...
-const ENTRY_PATH = cwd() + '/' + config.src.scripts
+const ENTRY_PATH = cwd() + '/' + config.scripts
 const OUTPUT_PATH = cwd() + '/' + config.theme + '/assets'
 
 let plugins = [
