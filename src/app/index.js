@@ -238,7 +238,9 @@ class ShopifySkeleton extends Yeoman {
     this.options.noAnims
       ? this.log(chalk.white((message)))
       : this.log(parrotSay(message + ' 🦄'))
-    this.log('PS: use npm run code to start')
+    this.options.npmInstall
+      ? this.log('PS: use ' + chalk.magenta('npm run code') + ' to start')
+      : this.log('PS: use ' + chalk.magenta('npm run start') + ' then ' + chalk.magenta('npm run code') + ' to start')
     return this.log('Love, Pixel2HTML')
   }
 }
